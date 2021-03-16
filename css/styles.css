@@ -1,0 +1,227 @@
+/* ========================================================================
+   GLOBAL STYLES
+======================================================================== */
+
+/* Variables */
+:root {
+    --button-color: #4f7df3;
+    --input-color: #c2d3ff;
+    --error-color: #ff5263;
+    --neutral-light-color: #969696;
+    --neutral-dark-color: #151f29;
+    --main-font: 'Libre Franklin', sans-serif;
+}
+
+/* Box model fix */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Font size */
+html {
+    font-size: 12px;
+}
+@media screen and (min-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 1000px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Scroll behavior */
+@media screen and (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Body */
+body {
+    font-family: var(--main-font);
+    width: 85%;
+    max-width: 800px;
+    margin: 10vh auto 5vh;
+}
+
+/* Images */
+img {
+    width: 100%;
+    height: auto
+}
+
+/* ========================================================================
+   COMPONENTS
+======================================================================== */
+
+/* Header */
+.header {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Logo */
+.logo {
+    width: 90px;
+}
+
+/* Title */
+.title {
+    font-size: 2em;
+    font-weight: 300;
+    color: var(--neutral-light-color);
+    margin: 5vh 0 3vh;
+}
+.title__strong {
+    font-weight: 700;
+    color: var(--neutral-dark-color);
+}
+@media screen and (min-width: 600px) {
+    .title {
+        font-size: 2.5em;
+    }
+}
+
+/* Subtilte */
+.subtitle {
+    color: var(--neutral-dark-color);
+    font-size: 1em;
+}
+
+/* Form */
+.form {
+    margin: 5vh auto 10vh;
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    max-width: 650px;
+}
+.form__input-wrap {
+    flex: 1 1 400px;
+    max-width: 500px;
+}
+.form__input {
+    border-radius: 2em;
+    border: 1px solid var(--input-color);
+    font-size: 0.9em;
+    padding: 1em 2em;
+    width: 100%;
+}
+.form__input.--error {
+    border: 2px solid var(--error-color);
+}
+.form__input::placeholder {
+    color: var(--input-color);
+}
+.form__error {
+    font-style: italic;
+    display: inline-block;
+    color: var(--error-color);
+    font-size: 0.75em;
+    width: 100%;
+    text-align: left;
+    margin: 10px 1em;
+}
+.form__error.--hidden {
+    display: none;
+}
+.form__button {
+    border: none;
+    background-color: var(--button-color);
+    color: white;
+    font-family: inherit;
+    padding: 1em 2em;
+    font-weight: 600;
+    font-size: 0.9em;
+    border-radius: 2em;
+    flex: 1 1 200px;
+    max-width: 500px;
+    height: fit-content;
+    outline: none;
+}
+.form__button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.form__button:active {
+    transform: translateY(1px);
+    filter: saturate(150%);
+}
+.form__button:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+/* Illustration */
+.illustration {
+    margin-bottom: 10vh;
+}
+
+/* Footer */
+.footer {
+    font-size: 1rem;
+}
+
+/* Social media */
+.social-media {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+.social-media__item {
+    border: 1px solid var(--input-color);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.social-media__item:hover {
+    background-color: var(--button-color);
+    cursor: pointer;
+}
+.social-media__item:focus-within {
+    outline: -webkit-focus-ring-color auto 1px;
+}
+.social-media__link {
+    outline: none;
+}
+.social-media__icon {
+    width: 15px;
+    height: 15px;
+    fill: var(--button-color);
+}
+.social-media__item:hover .social-media__icon {
+    fill: white;
+}
+
+/* Copyright */
+.copyright {
+    color: var(--neutral-light-color);
+    text-align: center;
+    font-size: 0.8em;
+    margin: 5vh 0;
+}
+
+/* Attribution */
+.attribution {
+    font-size: 10px;
+    color: var(--neutral-dark-color);
+    text-align: center;
+}
+.attribution__link {
+    color: var(--button-color);
+}
+.attribution__link:hover {
+    text-decoration: none;
+    font-weight: 600;
+}
